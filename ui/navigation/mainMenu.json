@@ -1,0 +1,10 @@
+{
+  "entries": [
+    {
+      "label": "i18n/contacts.label",
+      "type": "view",
+      "view": "views/grid/contacts",
+      "icon": "accounts"
+    }
+  ]
+}

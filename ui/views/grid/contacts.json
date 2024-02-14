@@ -1,0 +1,41 @@
+{
+  "name": "contacts",
+  "label": "i18n/contacts.label",
+  "entity": "entities/contacts",
+  "settings": {
+    "sortField": "fullName",
+    "sortDirection": "ascendant"
+  },
+  "columns": [
+    {
+      "field": "fullName"
+    },
+    {
+      "field": "company"
+    },
+    {
+      "field": "email"
+    },
+    {
+      "field": "phoneNumbers"
+    }
+  ],
+  "crud": {
+    "create": {
+      "enabled": true,
+      "view": "views/record/contactCreate"
+    },
+    "read": {
+      "enabled": true,
+      "view": "views/record/contactRead",
+      "openInModal": true
+    },
+    "update": {
+      "enabled": true,
+      "view": "views/record/contactUpdate"
+    },
+    "delete": {
+      "enabled": true
+    }
+  }
+}

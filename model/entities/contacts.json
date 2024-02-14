@@ -1,0 +1,83 @@
+{
+  "name": "contacts",
+  "label": "i18n/contacts.label",
+  "recordLabel": "js/recordLabelCalculation",
+  "settings": {
+    "auditLogs": {
+      "enabled": true,
+      "userContext": {
+        "recordCreated": true,
+        "recordUpdated": true,
+        "recordDeleted": true,
+        "actionExecuted": true
+      },
+      "scriptContext": {
+        "recordCreated": true,
+        "recordUpdated": true,
+        "recordDeleted": true,
+        "actionExecuted": true
+      }
+    },
+    "indexes": [
+      {
+        "name": "data.email",
+        "unique": true,
+        "fields": [
+          {
+            "name": "email"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": [
+    {
+      "name": "company",
+      "label": "i18n/contacts.company.label",
+      "type": "relationship",
+      "required": true,
+      "targetEntity": "companies",
+      "filter": {
+        "condition": "and",
+        "rules": [
+          {
+            "field": "active",
+            "operator": "equals",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "firstName",
+      "label": "i18n/contacts.firstName.label",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "lastName",
+      "label": "i18n/contacts.lastName.label",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "fullName",
+      "label": "i18n/contacts.fullName.label",
+      "type": "text",
+      "calculation": "js/fullNameFieldCalculation"
+    },
+    {
+      "name": "email",
+      "label": "i18n/contacts.email.label",
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    {
+      "name": "phoneNumbers",
+      "label": "i18n/contacts.phoneNumbers.label",
+      "type": "phone",
+      "multiplicity": "many"
+    }
+  ]
+}
