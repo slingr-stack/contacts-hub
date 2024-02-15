@@ -1,0 +1,35 @@
+{
+  "name": "companies",
+  "label": "i18n/companies.label",
+  "entity": "entities/companies",
+  "settings": {
+    "sortField": "name",
+    "sortDirection": "ascendant"
+  },
+  "columns": [
+    {
+      "field": "name"
+    },
+    {
+      "field": "status"
+    }
+  ],
+  "crud": {
+    "create": {
+      "enabled": true,
+      "view": "views/record/companyCreate"
+    },
+    "read": {
+      "enabled": true,
+      "view": "views/record/companyRead",
+      "openInModal": true
+    },
+    "update": {
+      "enabled": true,
+      "view": "views/record/companyUpdate"
+    },
+    "delete": {
+      "enabled": true
+    }
+  }
+}

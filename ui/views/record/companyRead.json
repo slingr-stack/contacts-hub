@@ -1,0 +1,6 @@
+{
+  "name": "companyRead",
+  "label": "i18n/companies.read.label",
+  "entity": "entities/companies",
+  "type": "read"
+}

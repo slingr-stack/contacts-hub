@@ -1,0 +1,94 @@
+{
+  "name": "companies",
+  "label": "i18n/companies.label",
+  "recordLabel": "#fields/name",
+  "settings": {
+    "auditLogs": {
+      "enabled": true,
+      "userContext": {
+        "recordCreated": true,
+        "recordUpdated": true,
+        "recordDeleted": true,
+        "actionExecuted": true
+      },
+      "scriptContext": {
+        "recordCreated": true,
+        "recordUpdated": true,
+        "recordDeleted": true,
+        "actionExecuted": true
+      }
+    }
+  },
+  "fields": [
+    {
+      "name": "name",
+      "label": "i18n/companies.name.label",
+      "type": "text",
+      "required": true,
+      "indexable": true,
+      "unique": true
+    },
+    {
+      "name": "description",
+      "label": "i18n/companies.description.label",
+      "type": "text",
+      "uiOptions": {
+        "editComponent": "textArea",
+        "numberOfRows": 4
+      }
+    },
+    {
+      "name": "status",
+      "label": "i18n/companies.status.label",
+      "type": "choice",
+      "choices": [
+        {
+          "name": "active",
+          "label": "i18n/companies.active.label"
+        },
+        {
+          "name": "inactive",
+          "label": "i18n/companies.inactive.label"
+        }
+      ],
+      "defaultValue": "active"
+    },
+    {
+      "name": "address",
+      "label": "i18n/companies.address.label",
+      "type": "nested",
+      "fields": [
+        {
+          "name": "street",
+          "label": "i18n/companies.street.label",
+          "type": "text"
+        },
+        {
+          "name": "zipCode",
+          "label": "i18n/companies.zipCode.label",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "activate",
+      "label": "i18n/companies.activate.label",
+      "type": "oneRecord",
+      "precondition": {
+        "status": "inactive"
+      },
+      "actions": "js/activateActions"
+    },
+    {
+      "name": "deactivate",
+      "label": "i18n/companies.deactivate.label",
+      "type": "oneRecord",
+      "precondition": {
+        "status": "active"
+      },
+      "actions": "js/deactivateActions"
+    }
+  ]
+}

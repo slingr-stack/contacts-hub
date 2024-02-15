@@ -1,6 +1,12 @@
 {
   "entries": [
     {
+      "label": "i18n/companies.label",
+      "type": "view",
+      "view": "views/grid/companies",
+      "icon": "city-alt"
+    },
+    {
       "label": "i18n/contacts.label",
       "type": "view",
       "view": "views/grid/contacts",

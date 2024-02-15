@@ -1,0 +1,6 @@
+{
+  "name": "contactCreate",
+  "label": "i18n/contacts.create.label",
+  "entity": "entities/contacts",
+  "type": "create"
+}

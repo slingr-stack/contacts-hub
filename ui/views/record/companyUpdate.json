@@ -1,0 +1,6 @@
+{
+  "name": "companyUpdate",
+  "label": "i18n/companies.update.label",
+  "entity": "entities/companies",
+  "type": "update"
+}

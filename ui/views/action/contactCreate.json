@@ -1,0 +1,6 @@
+{
+  "name": "companiesActivate",
+  "label": "i18n/companies.activate.label",
+  "entity": "entities/companies",
+  "action": "activate"
+}
