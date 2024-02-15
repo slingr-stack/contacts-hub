@@ -1,7 +1,7 @@
 {
   "name": "companies",
   "label": "i18n/companies.label",
-  "recordLabel": "#fields/name",
+  "recordLabel": "fields/name",
   "settings": {
     "auditLogs": {
       "enabled": true,
