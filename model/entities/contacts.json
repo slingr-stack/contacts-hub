@@ -1,7 +1,7 @@
 {
   "name": "contacts",
   "label": "i18n/contacts.label",
-  "recordLabel": "js/recordLabelCalculation",
+  "recordLabel": "js/recordLabel",
   "settings": {
     "auditLogs": {
       "enabled": true,

@@ -1,4 +1,4 @@
-function recordLabelCalculation(record) {
+function recordLabel(record) {
     return record.field('lastName').val() + ', ' + record.field('firstName').val();
 }
 
