@@ -51,7 +51,10 @@
           "label": "i18n/companies.inactive.label"
         }
       ],
-      "defaultValue": "active"
+      "defaultValue": "active",
+      "uiOptions": {
+        "readOnly": "always"
+      }
     },
     {
       "name": "address",

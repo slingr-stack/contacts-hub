@@ -61,6 +61,61 @@
       "label": "i18n/contacts.phoneNumbers.label",
       "type": "phone",
       "multiplicity": "many"
+    },
+    {
+      "name": "notes",
+      "label": "i18n/contacts.notes.label",
+      "type": "nested",
+      "multiplicity": "many",
+      "fields": [
+        {
+          "name": "date",
+          "label": "i18n/contacts.date.label",
+          "type": "dateTime",
+          "defaultValue": "expressions/currentDate",
+          "uiOptions": {
+            "readOnly": "always"
+          }
+        },
+        {
+          "name": "user",
+          "label": "i18n/contacts.user.label",
+          "type": "relationship",
+          "targetEntity": "sys.users",
+          "defaultValue": "js/userFieldDefaultValue",
+          "uiOptions": {
+            "readOnly": "always"
+          }
+        },
+        {
+          "name": "note",
+          "label": "i18n/contacts.note.label",
+          "type": "text",
+          "required": true,
+          "uiOptions": {
+            "editComponent": "textArea",
+            "numberOfRows": 4
+          }
+        }
+      ]
     }
-  ]
+  ],
+  "actions": {
+    "name": "addNote",
+    "label": "i18n/contacts.addNote.label",
+    "type": "oneRecord",
+    "parameters": [
+      {
+        "name": "note",
+        "label": "i18n/contacts.note.label",
+        "type": "text",
+        "required": true,
+        "uiOptions": {
+          "editComponent": "textArea",
+          "numberOfRows": 4
+        }
+      }
+    ],
+    "actions": "js/addNoteActions"
+  }
 }
