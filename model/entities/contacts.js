@@ -3,7 +3,10 @@ function recordLabel(record) {
 }
 
 function fullNameFieldCalculation(record) {
-    return record.field('firstName').val() + ' ' + record.field('lastName').val();
+    if (app.commons.stringUtils.isNotEmpty(record.field('firstName').val()) && app.commons.stringUtils.isNotEmpty(record.field('lastName').val())) {
+        return app.commons.stringUtils.trim(record.field('firstName').val()) + ' ' + app.commons.stringUtils.trim(record.field('lastName').val());
+    }
+    return null;
 }
 
 function userFieldDefaultValue() {
