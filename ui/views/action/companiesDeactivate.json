@@ -1,6 +1,6 @@
 {
   "name": "companiesDeactivate",
   "label": "i18n/companies.deactivate.label",
-  "entity": "entities/companies",
+  "entity": "companies",
   "action": "deactivate"
 }

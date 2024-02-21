@@ -1,6 +1,6 @@
 {
   "name": "companyCreate",
   "label": "i18n/companies.create.label",
-  "entity": "entities/companies",
+  "entity": "companies",
   "type": "create"
 }

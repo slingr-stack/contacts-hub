@@ -1,7 +1,7 @@
 {
   "name": "contacts",
   "label": "i18n/contacts.label",
-  "entity": "entities/contacts",
+  "entity": "contacts",
   "settings": {
     "sortField": "fullName",
     "sortDirection": "ascendant"

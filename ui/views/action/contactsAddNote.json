@@ -1,6 +1,6 @@
 {
   "name": "contactsAddNote",
   "label": "i18n/companies.addNote.label",
-  "entity": "entities/contacts",
+  "entity": "contacts",
   "action": "addNote"
 }

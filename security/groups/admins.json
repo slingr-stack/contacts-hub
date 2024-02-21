@@ -1,0 +1,135 @@
+{
+  "name": "admins",
+  "label": "Admins",
+  "entityPermissions": [
+    {
+      "entity": "companies",
+      "read": "always",
+      "create": "always",
+      "update": "always",
+      "delete": "always",
+      "auditLogs": "always",
+      "import": "always",
+      "export": "always",
+      "fields": [
+        {
+            "field": "name",
+            "permission": "readWrite"
+        },
+        {
+          "field": "description",
+          "permission": "readWrite"
+        },
+        {
+          "field": "status",
+          "permission": "readWrite"
+        },
+        {
+          "field": "address",
+          "permission": "readWrite",
+          "nestedFields": [
+            {
+              "field": "street",
+              "permission": "parent"
+            },
+            {
+              "field": "zipCode",
+              "permission": "parent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "contacts",
+      "read": "always",
+      "create": "always",
+      "update": "always",
+      "delete": "always",
+      "auditLogs": "always",
+      "import": "always",
+      "export": "always",
+      "fields": [
+        {
+          "field": "company",
+          "label": "i18n/contacts.company.label",
+          "type": "relationship",
+          "required": true,
+          "targetEntity": "companies",
+          "filter": {
+            "status": "active"
+          }
+        },
+        {
+          "field": "firstName",
+          "label": "i18n/contacts.firstName.label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "field": "lastName",
+          "label": "i18n/contacts.lastName.label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "field": "fullName",
+          "label": "i18n/contacts.fullName.label",
+          "type": "text",
+          "calculation": "js/fullNameFieldCalculation"
+        },
+        {
+          "field": "email",
+          "label": "i18n/contacts.email.label",
+          "type": "email",
+          "required": true,
+          "indexable": true,
+          "unique": true
+        },
+        {
+          "field": "phoneNumbers",
+          "label": "i18n/contacts.phoneNumbers.label",
+          "type": "phone",
+          "multiplicity": "many"
+        },
+        {
+          "field": "notes",
+          "label": "i18n/contacts.notes.label",
+          "type": "nested",
+          "multiplicity": "many",
+          "fields": [
+            {
+              "field": "date",
+              "label": "i18n/contacts.date.label",
+              "type": "dateTime",
+              "defaultValue": "expressions/currentDate",
+              "uiOptions": {
+                "readOnly": "always"
+              }
+            },
+            {
+              "name": "user",
+              "label": "i18n/contacts.user.label",
+              "type": "relationship",
+              "targetEntity": "sys.users",
+              "defaultValue": "js/userFieldDefaultValue",
+              "uiOptions": {
+                "readOnly": "always"
+              }
+            },
+            {
+              "name": "note",
+              "label": "i18n/contacts.note.label",
+              "type": "text",
+              "required": true,
+              "uiOptions": {
+                "editComponent": "textArea",
+                "numberOfRows": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
