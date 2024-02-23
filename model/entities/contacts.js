@@ -9,7 +9,7 @@ function fullNameFieldCalculation(record) {
     return null;
 }
 
-function userFieldDefaultValue() {
+function notesUserFieldDefaultValue() {
     return sys.context.getCurrentUserRecord();
 }
 

@@ -82,7 +82,7 @@
           "label": "i18n/contacts.user.label",
           "type": "relationship",
           "targetEntity": "sys.users",
-          "defaultValue": "js/userFieldDefaultValue",
+          "defaultValue": "js/notesUserFieldDefaultValue",
           "uiOptions": {
             "readOnly": "always"
           }
