@@ -14,22 +14,24 @@
       "field": "status"
     }
   ],
-  "crud": {
-    "create": {
-      "enabled": true,
-      "view": "views/record/companyCreate"
-    },
-    "read": {
-      "enabled": true,
-      "view": "views/record/companyRead",
-      "openInModal": true
-    },
-    "update": {
-      "enabled": true,
-      "view": "views/record/companyUpdate"
-    },
-    "delete": {
-      "enabled": true
+  "crud": [
+      {
+      "create": {
+        "enabled": true,
+        "view": "views/record/companyCreate"
+      },
+      "read": {
+        "enabled": true,
+        "view": "views/record/companyRead",
+        "openInModal": true
+      },
+      "update": {
+        "enabled": true,
+        "view": "views/record/companyUpdate"
+      },
+      "delete": {
+        "enabled": true
+      }
     }
-  }
+  ]
 }
