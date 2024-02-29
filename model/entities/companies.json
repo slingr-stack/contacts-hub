@@ -21,8 +21,8 @@
   },
   "fields": [
     {
-      "name": "name",
-      "label": "i18n/companies.name.label",
+      "name": "names",
+      "label": "i18n/companies.names.label",
       "type": "text",
       "required": true,
       "indexable": true,
