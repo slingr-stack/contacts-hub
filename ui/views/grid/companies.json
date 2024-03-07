@@ -11,7 +11,16 @@
       "field": "name"
     },
     {
-      "field": "status"
+      "field": "status",
+      "options": {
+          "alignment": "center"
+      }
+    },
+    {
+      "name": "contacts",
+      "label": "i18n/views.companies.contacts.label",
+      "type": "integer",
+      "calculation": "js/contactsColumnCalculation"
     }
   ],
   "crud": [
