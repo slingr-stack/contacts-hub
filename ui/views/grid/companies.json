@@ -27,16 +27,16 @@
       {
       "create": {
         "enabled": true,
-        "view": "views/record/companyCreate"
+        "view": "views/companyCreate"
       },
       "read": {
         "enabled": true,
-        "view": "views/record/companyRead",
+        "view": "views/companyRead",
         "openInModal": true
       },
       "update": {
         "enabled": true,
-        "view": "views/record/companyUpdate"
+        "view": "views/companyUpdate"
       },
       "delete": {
         "enabled": true
