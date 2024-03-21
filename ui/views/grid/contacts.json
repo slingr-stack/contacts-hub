@@ -23,16 +23,16 @@
   "crud": {
     "create": {
       "enabled": true,
-      "view": "views/record/contactCreate"
+      "view": "views/contactCreate"
     },
     "read": {
       "enabled": true,
-      "view": "views/record/contactRead",
+      "view": "views/contactRead",
       "openInModal": true
     },
     "update": {
       "enabled": true,
-      "view": "views/record/contactUpdate"
+      "view": "views/contactUpdate"
     },
     "delete": {
       "enabled": true
