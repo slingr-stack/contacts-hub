@@ -1,0 +1,5 @@
+{
+  "name": "users",
+  "label": "i18n/views.users.label",
+  "entity": "sys.users"
+}
