@@ -1,5 +1,73 @@
 {
   "name": "users",
   "label": "i18n/views.users.label",
-  "entity": "sys.users"
+  "entity": "sys.users",
+  "settings": {
+    "sortField": "fullName",
+    "sortDirection": "ascendant"
+  },
+  "columns": [
+    {
+      "field": "fullName"
+    },
+    {
+      "field": "email"
+    },
+    {
+      "field": "groups.group",
+      "options": {
+         "overrideLabel": true,
+          "label": "i18n/views.users.columns.groups.group.label"
+      }
+    },
+    {
+      "field": "identityProviders.name",
+      "options": {
+        "overrideLabel": true,
+        "label": "i18n/views.users.columns.identityProviders.name.label"
+      }
+    },
+    {
+      "field": "identityProviders.name",
+      "options": {
+        "overrideLabel": true,
+        "label": "i18n/views.users.columns.identityProviders.name.label"
+      }
+    },
+    {
+      "name": "lastLogin",
+      "label": "i18n/views.users.columns.lastLogin.label",
+      "type": "dateTime",
+      "calculation": "js/lastLoginColumnCalculation"
+    },
+    {
+      "name": "fromIp",
+      "label": "i18n/views.users.columns.fromIp.label",
+      "type": "text",
+      "calculation": "js/fromIpColumnCalculation"
+    },
+    {
+      "name": "connectionStatus",
+      "label": "i18n/views.users.columns.connectionStatus.label",
+      "type": "choice",
+      "choices": [
+        {
+          "name": "online",
+          "label": "i18n/views.users.columns.connectionStatus.online.label",
+          "color": "success"
+        },
+        {
+          "name": "away",
+          "label": "i18n/views.users.columns.connectionStatus.away.label",
+          "color": "warning"
+        },
+        {
+          "name": "offline",
+          "label": "i18n/views.users.columns.connectionStatus.offline.label"
+        }
+      ],
+      "calculation": "js/connectionStatusColumnCalculation"
+    }
+
+  ]
 }
