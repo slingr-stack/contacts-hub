@@ -383,5 +383,41 @@
         "visible": false
       }
     }
+  ],
+  "actions": [
+    {
+      "name": "resetPassword",
+      "label": "i18n/users.resetPassword.label",
+      "type": "oneRecord",
+      "actions": "js/resetPasswordActions",
+      "resultAsResponse": true
+    },
+    {
+      "name": "activate",
+      "label": "i18n/users.activate.label",
+      "type": "oneRecord",
+      "actions": "js/activateActions",
+      "precondition": {
+        "status": "inactive"
+      }
+    },
+    {
+      "name": "deactivate",
+      "label": "i18n/users.deactivate.label",
+      "type": "oneRecord",
+      "actions": "js/deactivateActions",
+      "precondition": {
+        "status": "active"
+      }
+    },
+    {
+      "name": "unblock",
+      "label": "i18n/users.unblock.label",
+      "type": "oneRecord",
+      "actions": "js/unblockActions",
+      "precondition": {
+        "status": "blocked"
+      }
+    }
   ]
 }

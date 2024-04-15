@@ -1,0 +1,6 @@
+{
+  "name": "usersActivate",
+  "label": "i18n/users.activate.label",
+  "entity": "sys.users",
+  "action": "activate"
+}

@@ -42,3 +42,21 @@ function phoneNumberFieldReadWriteAccess(record) {
 function identityProvidersFieldRequired(record) {
     return !record.isNew();
 }
+
+function resetPasswordActions(record, oldRecord, action) {
+    return sys.internal.users.resetPassword(record, {notifyUser: true});
+}
+
+function activateActions(record, oldRecord, action) {
+    return sys.internal.users.activate(record);
+}
+
+function deactivateActions(record, oldRecord, action) {
+    return sys.internal.users.deactivate(record);
+}
+
+function unblockActions(record, oldRecord, action) {
+    return sys.internal.users.unblock(record);
+}
+
+
