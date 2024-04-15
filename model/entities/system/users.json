@@ -94,6 +94,294 @@
       "name": "created",
       "label": "i18n/users.created.label",
       "type": "dateRecordCreated"
+    },
+    {
+      "name": "authentication",
+      "label": "i18n/users.authentication.label",
+      "type": "nestedField",
+      "required": true,
+      "fields": [
+        {
+          "name": "generatePassword",
+          "label": "i18n/users.generatePassword.label",
+          "type": "boolean",
+          "defaultValue": true,
+          "transient": true,
+          "uiOptions": {
+            "visible": "js/generatePasswordFieldVisible"
+          }
+        },
+        {
+          "name": "newPassword",
+          "label": "i18n/users.newPassword.label",
+          "type": "text",
+          "transient": true,
+          "sensitive": true,
+          "minimumLength": 6,
+          "required": "js/newPasswordFieldRequired",
+          "readWriteAccess": "js/newPasswordFieldReadWriteAccess",
+          "uiOptions": {
+            "password": true
+          }
+        },
+        {
+          "name": "passwordConfirmation",
+          "label": "i18n/users.passwordConfirmation.label",
+          "type": "text",
+          "transient": true,
+          "sensitive": true,
+          "minimumLength": 6,
+          "required": "js/passwordConfirmationFieldRequired",
+          "readWriteAccess": "js/passwordConfirmationFieldReadWriteAccess",
+          "uiOptions": {
+            "password": true
+          }
+        },
+        {
+          "name": "password",
+          "label": "i18n/users.password.label",
+          "type": "text",
+          "minimumLength": 6,
+          "required": "js/passwordFieldRequired",
+          "uiOptions": {
+            "visible": false
+          }
+        },
+        {
+          "name": "passwordExpired",
+          "label": "i18n/users.passwordExpired.label",
+          "type": "boolean",
+          "uiOptions": {
+            "visible": false
+          }
+        },
+        {
+          "name": "lastPasswordChange",
+          "label": "i18n/users.lastPasswordChange.label",
+          "type": "dateTime",
+          "uiOptions": {
+            "visible": false
+          }
+        },
+        {
+          "name": "resetPasswordCode",
+          "label": "i18n/users.resetPasswordCode.label",
+          "type": "text",
+          "uiOptions": {
+            "visible": false
+          }
+        },
+        {
+          "name": "enableTwoFactorAuthentication",
+          "label": "i18n/users.enableTwoFactorAuthentication.label",
+          "type": "boolean",
+          "uiOptions": {
+            "visible": false
+          }
+        },
+        {
+          "name": "phoneNumber",
+          "label": "i18n/users.phoneNumber.label",
+          "type": "text",
+          "required": {
+            "authentication.enableTwoFactorAuthentication": true
+          },
+          "readWriteAccess": {
+            "authentication.enableTwoFactorAuthentication": true
+          },
+          "uiOptions": {
+            "visible": false
+          }
+        },
+        {
+          "name": "twoFactorAuthenticationKey",
+          "label": "i18n/users.twoFactorAuthenticationKey.label",
+          "type": "qr",
+          "sensitive": true,
+          "readWriteAccess": {
+            "authentication.enableTwoFactorAuthentication": true
+          },
+          "uiOptions": {
+            "visible": false
+          }
+        },
+        {
+          "name": "failedLoginAttempts",
+          "label": "i18n/users.failedLoginAttempts.label",
+          "type": "integer",
+          "defaultValue": 0,
+          "uiOptions": {
+            "visible": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "groups",
+      "label": "i18n/users.groups.label",
+      "type": "nestedField",
+      "multiplicity": "many",
+      "required": true,
+      "fields": [
+        {
+          "name": "primary",
+          "label": "i18n/users.primary.label",
+          "type": "boolean"
+        },
+        {
+          "name": "external",
+          "label": "i18n/users.external.label",
+          "type": "boolean"
+        },
+        {
+          "name": "group",
+          "label": "i18n/users.group.label",
+          "type": "group",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "permissions",
+      "label": "i18n/users.permissions.label",
+      "type": "nestedField",
+      "required": true,
+      "fields": [
+        {
+          "name": "superUser",
+          "label": "i18n/users.superUser.label",
+          "type": "boolean"
+        },
+        {
+          "name": "systemUser",
+          "label": "i18n/users.systemUser.label",
+          "type": "boolean"
+        },
+        {
+          "name": "developer",
+          "label": "i18n/users.developer.label",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "localization",
+      "label": "i18n/users.localization.label",
+      "type": "nestedField",
+      "fields": [
+        {
+          "name": "timezoneMode",
+          "label": "i18n/users.timezoneMode.label",
+          "type": "choice",
+          "defaultValue": "auto",
+          "choices": [
+            {
+              "name": "auto",
+              "label": "i18n/users.timezoneMode.auto.label"
+            },
+            {
+              "name": "manual",
+              "label": "i18n/users.timezoneMode.manual.label"
+            }
+          ]
+        },
+        {
+          "name": "timezone",
+          "label": "i18n/users.timezone.label",
+          "type": "text",
+          "readWriteAccess": {
+            "localization.timezoneMode": "manual"
+          }
+        },
+        {
+          "name": "language",
+          "label": "i18n/users.language.label",
+          "type": "choice",
+          "defaultValue": "english",
+          "choices": [
+            {
+              "name": "english",
+              "label": "i18n/users.language.english.label"
+            },
+            {
+              "name": "spanish",
+              "label": "i18n/users.language.spanish.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "identityProviders",
+      "label": "i18n/users.identityProviders.label",
+      "type": "nestedField",
+      "multiplicity": "many",
+      "required": "js/identityProvidersFieldRequired",
+      "fields": [
+        {
+          "name": "name",
+          "label": "i18n/users.name.label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "externalId",
+          "label": "i18n/users.externalId.label",
+          "type": "text"
+        }
+      ],
+      "uiOptions": {
+        "visible": false
+      }
+    },
+    {
+      "name": "integrations",
+      "label": "i18n/users.integrations.label",
+      "type": "nestedField",
+      "multiplicity": "many",
+      "fields": [
+        {
+          "name": "endpoint",
+          "label": "i18n/users.endpoint.label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "status",
+          "label": "i18n/users.status.label",
+          "type": "choice",
+          "choices": [
+            {
+              "name": "connected",
+              "label": "i18n/users.connected.label",
+              "color": "success"
+            },
+            {
+              "name": "disconnected",
+              "label": "i18n/users.disconnected.label",
+              "color": "danger"
+            }
+          ],
+          "defaultValue": "disconnected"
+        },
+        {
+          "name": "configurationSet",
+          "label": "i18n/users.configurationSet.label",
+          "type": "boolean"
+        },
+        {
+          "name": "configuration",
+          "label": "i18n/users.configuration.label",
+          "type": "longText",
+          "uiOptions": {
+            "editRepresentation": "textArea",
+            "rows": 5
+          }
+        }
+      ],
+      "uiOptions": {
+        "visible": false
+      }
     }
   ]
 }

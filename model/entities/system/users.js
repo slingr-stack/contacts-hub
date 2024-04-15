@@ -10,3 +10,35 @@ function emailFieldCalculation(record) {
 function sendWelcomeEmailFieldVisible(record) {
     return record.isNew();
 }
+
+function generatePasswordFieldVisible(record) {
+    return record.isNew() && !record.field('sendWelcomeEmail').val();
+}
+
+function newPasswordFieldRequired(record) {
+    return record.isNew() && !record.field('authentication.generatePassword').val();
+}
+
+function newPasswordFieldReadWriteAccess(record) {
+    return record.isNew() && !record.field('authentication.generatePassword').val();
+}
+
+function passwordConfirmationFieldRequired(record) {
+    return record.isNew() && !record.field('authentication.generatePassword').val();
+}
+
+function passwordConfirmationFieldReadWriteAccess(record) {
+    return record.isNew() && !record.field('authentication.generatePassword').val();
+}
+
+function phoneNumberFieldRequired(record) {
+    return record.isNew() && !record.field('authentication.generatePassword').val();
+}
+
+function phoneNumberFieldReadWriteAccess(record) {
+    return record.isNew() && !record.field('authentication.generatePassword').val();
+}
+
+function identityProvidersFieldRequired(record) {
+    return !record.isNew();
+}
