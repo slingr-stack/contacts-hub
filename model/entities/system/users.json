@@ -1,6 +1,6 @@
 {
   "name": "users",
-  "label": "entities.users.label",
+  "label": "i18n/users.label",
   "recordLabel": "fields/fullName",
   "settings": {
     "auditLogs": {
