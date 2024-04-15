@@ -1,0 +1,6 @@
+{
+  "name": "userCreate",
+  "label": "i18n/users.userCreate.label",
+  "entity": "sys.users",
+  "type": "update"
+}

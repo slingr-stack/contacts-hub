@@ -1,0 +1,6 @@
+{
+  "name": "userUpdate",
+  "label": "i18n/users.userUpdate.label",
+  "entity": "sys.users",
+  "type": "edit"
+}

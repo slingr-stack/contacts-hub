@@ -69,5 +69,22 @@
       "calculation": "js/connectionStatusColumnCalculation"
     }
 
-  ]
+  ],
+  "crud": {
+    "create": {
+      "enabled": true,
+      "view": "views/userCreate"
+    },
+    "read": {
+      "enabled": true,
+      "view": "views/userRead"
+    },
+    "update": {
+      "enabled": true,
+      "view": "views/userUpdate"
+    },
+    "delete": {
+      "enabled": true
+    }
+  }
 }
