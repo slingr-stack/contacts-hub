@@ -1,6 +1,6 @@
 {
   "name": "contactUpdate",
-  "label": "i18n/contacts.update.label",
+  "label": "Contact update",
   "entity": "contacts",
   "type": "update"
 }

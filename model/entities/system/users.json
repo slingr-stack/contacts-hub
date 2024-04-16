@@ -1,6 +1,6 @@
 {
   "name": "users",
-  "label": "i18n/users.label",
+  "label": "Users",
   "recordLabel": "fields/fullName",
   "settings": {
     "auditLogs": {
@@ -24,26 +24,26 @@
   "fields": [
     {
       "name": "firstName",
-      "label": "i18n/users.firstName.label",
+      "label": "First name",
       "type": "text",
       "required": true
     },
     {
       "name": "lastName",
-      "label": "i18n/users.lastName.label",
+      "label": "Last name",
       "type": "text",
       "required": true
     },
     {
       "name": "fullName",
-      "label": "i18n/users.lastName.label",
+      "label": "Full name",
       "type": "text",
       "required": true,
       "calculation": "js/fullNameFieldCalculation"
     },
     {
       "name": "email",
-      "label": "i18n/users.email.label",
+      "label": "Email",
       "type": "email",
       "required": true,
       "unique": true,
@@ -51,7 +51,7 @@
     },
     {
       "name": "emailStandardized",
-      "label": "i18n/users.emailStandardized.label",
+      "label": "Email standardized",
       "type": "email",
       "calculation": "js/emailFieldCalculation",
       "uiOptions": {
@@ -60,20 +60,20 @@
     },
     {
       "name": "status",
-      "label": "i18n/users.status.label",
+      "label": "Status",
       "type": "choice",
       "choices": [
         {
           "name": "active",
-          "label": "i18n/users.active.label"
+          "label": "Active"
         },
         {
           "name": "inactive",
-          "label": "i18n/users.inactive.label"
+          "label": "Inactive"
         },
         {
           "name": "blocked",
-          "label": "i18n/users.blocked.label"
+          "label": "Blocked"
         }
       ],
       "defaultValue": "active",
@@ -83,7 +83,7 @@
     },
     {
       "name": "sendWelcomeEmail",
-      "label": "i18n/users.sendWelcomeEmail.label",
+      "label": "Send welcome email",
       "type": "boolean",
       "transient": true,
       "uiOptions": {
@@ -92,18 +92,18 @@
     },
     {
       "name": "created",
-      "label": "i18n/users.created.label",
+      "label": "Created",
       "type": "dateRecordCreated"
     },
     {
       "name": "authentication",
-      "label": "i18n/users.authentication.label",
+      "label": "Authentication",
       "type": "nestedField",
       "required": true,
       "fields": [
         {
           "name": "generatePassword",
-          "label": "i18n/users.generatePassword.label",
+          "label": "Generate password",
           "type": "boolean",
           "defaultValue": true,
           "transient": true,
@@ -113,7 +113,7 @@
         },
         {
           "name": "newPassword",
-          "label": "i18n/users.newPassword.label",
+          "label": "New password",
           "type": "text",
           "transient": true,
           "sensitive": true,
@@ -126,7 +126,7 @@
         },
         {
           "name": "passwordConfirmation",
-          "label": "i18n/users.passwordConfirmation.label",
+          "label": "Password confirmation",
           "type": "text",
           "transient": true,
           "sensitive": true,
@@ -139,7 +139,7 @@
         },
         {
           "name": "password",
-          "label": "i18n/users.password.label",
+          "label": "Password",
           "type": "text",
           "minimumLength": 6,
           "required": "js/passwordFieldRequired",
@@ -149,7 +149,7 @@
         },
         {
           "name": "passwordExpired",
-          "label": "i18n/users.passwordExpired.label",
+          "label": "Password expired",
           "type": "boolean",
           "uiOptions": {
             "visible": false
@@ -157,7 +157,7 @@
         },
         {
           "name": "lastPasswordChange",
-          "label": "i18n/users.lastPasswordChange.label",
+          "label": "Last password change",
           "type": "dateTime",
           "uiOptions": {
             "visible": false
@@ -165,7 +165,7 @@
         },
         {
           "name": "resetPasswordCode",
-          "label": "i18n/users.resetPasswordCode.label",
+          "label": "Reset password code",
           "type": "text",
           "uiOptions": {
             "visible": false
@@ -173,7 +173,7 @@
         },
         {
           "name": "enableTwoFactorAuthentication",
-          "label": "i18n/users.enableTwoFactorAuthentication.label",
+          "label": "Enable two factor authentication",
           "type": "boolean",
           "uiOptions": {
             "visible": false
@@ -181,7 +181,7 @@
         },
         {
           "name": "phoneNumber",
-          "label": "i18n/users.phoneNumber.label",
+          "label": "Phone number",
           "type": "text",
           "required": {
             "authentication.enableTwoFactorAuthentication": true
@@ -195,7 +195,7 @@
         },
         {
           "name": "twoFactorAuthenticationKey",
-          "label": "i18n/users.twoFactorAuthenticationKey.label",
+          "label": "TwoFactor authentication key",
           "type": "qr",
           "sensitive": true,
           "readWriteAccess": {
@@ -207,7 +207,7 @@
         },
         {
           "name": "failedLoginAttempts",
-          "label": "i18n/users.failedLoginAttempts.label",
+          "label": "Failed login attempts",
           "type": "integer",
           "defaultValue": 0,
           "uiOptions": {
@@ -218,24 +218,24 @@
     },
     {
       "name": "groups",
-      "label": "i18n/users.groups.label",
+      "label": "Groups",
       "type": "nestedField",
       "multiplicity": "many",
       "required": true,
       "fields": [
         {
           "name": "primary",
-          "label": "i18n/users.primary.label",
+          "label": "Primary",
           "type": "boolean"
         },
         {
           "name": "external",
-          "label": "i18n/users.external.label",
+          "label": "External",
           "type": "boolean"
         },
         {
           "name": "group",
-          "label": "i18n/users.group.label",
+          "label": "Group",
           "type": "group",
           "required": true
         }
@@ -243,51 +243,51 @@
     },
     {
       "name": "permissions",
-      "label": "i18n/users.permissions.label",
+      "label": "Permissions",
       "type": "nestedField",
       "required": true,
       "fields": [
         {
           "name": "superUser",
-          "label": "i18n/users.superUser.label",
+          "label": "Super user",
           "type": "boolean"
         },
         {
           "name": "systemUser",
-          "label": "i18n/users.systemUser.label",
+          "label": "System user",
           "type": "boolean"
         },
         {
           "name": "developer",
-          "label": "i18n/users.developer.label",
+          "label": "Developer",
           "type": "boolean"
         }
       ]
     },
     {
       "name": "localization",
-      "label": "i18n/users.localization.label",
+      "label": "Localization",
       "type": "nestedField",
       "fields": [
         {
           "name": "timezoneMode",
-          "label": "i18n/users.timezoneMode.label",
+          "label": "Timezone mode",
           "type": "choice",
           "defaultValue": "auto",
           "choices": [
             {
               "name": "auto",
-              "label": "i18n/users.timezoneMode.auto.label"
+              "label": "Auto"
             },
             {
               "name": "manual",
-              "label": "i18n/users.timezoneMode.manual.label"
+              "label": "Manual"
             }
           ]
         },
         {
           "name": "timezone",
-          "label": "i18n/users.timezone.label",
+          "label": "Timezone",
           "type": "text",
           "readWriteAccess": {
             "localization.timezoneMode": "manual"
@@ -295,17 +295,17 @@
         },
         {
           "name": "language",
-          "label": "i18n/users.language.label",
+          "label": "Language",
           "type": "choice",
           "defaultValue": "english",
           "choices": [
             {
               "name": "english",
-              "label": "i18n/users.language.english.label"
+              "label": "English"
             },
             {
               "name": "spanish",
-              "label": "i18n/users.language.spanish.label"
+              "label": "Spanish"
             }
           ]
         }
@@ -313,20 +313,20 @@
     },
     {
       "name": "identityProviders",
-      "label": "i18n/users.identityProviders.label",
+      "label": "Identity providers",
       "type": "nestedField",
       "multiplicity": "many",
       "required": "js/identityProvidersFieldRequired",
       "fields": [
         {
           "name": "name",
-          "label": "i18n/users.name.label",
+          "label": "Name",
           "type": "text",
           "required": true
         },
         {
           "name": "externalId",
-          "label": "i18n/users.externalId.label",
+          "label": "External id",
           "type": "text"
         }
       ],
@@ -336,29 +336,29 @@
     },
     {
       "name": "integrations",
-      "label": "i18n/users.integrations.label",
+      "label": "Integrations",
       "type": "nestedField",
       "multiplicity": "many",
       "fields": [
         {
           "name": "endpoint",
-          "label": "i18n/users.endpoint.label",
+          "label": "Endpoint",
           "type": "text",
           "required": true
         },
         {
           "name": "status",
-          "label": "i18n/users.status.label",
+          "label": "Status",
           "type": "choice",
           "choices": [
             {
               "name": "connected",
-              "label": "i18n/users.connected.label",
+              "label": "Connected",
               "color": "success"
             },
             {
               "name": "disconnected",
-              "label": "i18n/users.disconnected.label",
+              "label": "Disconnected",
               "color": "danger"
             }
           ],
@@ -366,12 +366,12 @@
         },
         {
           "name": "configurationSet",
-          "label": "i18n/users.configurationSet.label",
+          "label": "Configuration set",
           "type": "boolean"
         },
         {
           "name": "configuration",
-          "label": "i18n/users.configuration.label",
+          "label": "Configuration",
           "type": "longText",
           "uiOptions": {
             "editRepresentation": "textArea",
@@ -387,14 +387,14 @@
   "actions": [
     {
       "name": "resetPassword",
-      "label": "i18n/users.resetPassword.label",
+      "label": "Reset password",
       "type": "oneRecord",
       "actions": "js/resetPasswordActions",
       "resultAsResponse": true
     },
     {
       "name": "activate",
-      "label": "i18n/users.activate.label",
+      "label": "Activate",
       "type": "oneRecord",
       "actions": "js/activateActions",
       "precondition": {
@@ -403,7 +403,7 @@
     },
     {
       "name": "deactivate",
-      "label": "i18n/users.deactivate.label",
+      "label": "Deactivate",
       "type": "oneRecord",
       "actions": "js/deactivateActions",
       "precondition": {
@@ -412,7 +412,7 @@
     },
     {
       "name": "unblock",
-      "label": "i18n/users.unblock.label",
+      "label": "Unblock",
       "type": "oneRecord",
       "actions": "js/unblockActions",
       "precondition": {

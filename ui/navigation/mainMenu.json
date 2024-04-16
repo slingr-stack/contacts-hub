@@ -1,16 +1,29 @@
 {
   "entries": [
     {
-      "label": "i18n/companies.label",
+      "label": "Companies",
       "type": "view",
       "view": "views/grid/companies",
       "icon": "city-alt"
     },
     {
-      "label": "i18n/contacts.label",
+      "label": "Contacts",
       "type": "view",
       "view": "views/grid/contacts",
       "icon": "accounts"
+    },
+    {
+      "label": "Administration",
+      "type": "group",
+      "expanded": true,
+      "entries": [
+        {
+          "label": "Users",
+          "type": "view",
+          "view": "views/grid/users",
+          "icon": "assigment-account"
+        }
+      ]
     }
   ]
 }

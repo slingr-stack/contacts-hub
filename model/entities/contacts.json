@@ -1,6 +1,6 @@
 {
   "name": "contacts",
-  "label": "i18n/contacts.label",
+  "label": "Contacts",
   "recordLabel": "js/recordLabel",
   "settings": {
     "auditLogs": {
@@ -22,7 +22,7 @@
   "fields": [
     {
       "name": "company",
-      "label": "i18n/contacts.company.label",
+      "label": "Company",
       "type": "relationship",
       "required": true,
       "targetEntity": "companies",
@@ -32,25 +32,25 @@
     },
     {
       "name": "firstName",
-      "label": "i18n/contacts.firstName.label",
+      "label": "First name",
       "type": "text",
       "required": true
     },
     {
       "name": "lastName",
-      "label": "i18n/contacts.lastName.label",
+      "label": "Last name",
       "type": "text",
       "required": true
     },
     {
       "name": "fullName",
-      "label": "i18n/contacts.fullName.label",
+      "label": "Full name",
       "type": "text",
       "calculation": "js/fullNameFieldCalculation"
     },
     {
       "name": "email",
-      "label": "i18n/contacts.email.label",
+      "label": "Email",
       "type": "email",
       "required": true,
       "indexable": true,
@@ -58,19 +58,19 @@
     },
     {
       "name": "phoneNumbers",
-      "label": "i18n/contacts.phoneNumbers.label",
+      "label": "Phone numbers",
       "type": "phone",
       "multiplicity": "many"
     },
     {
       "name": "notes",
-      "label": "i18n/contacts.notes.label",
+      "label": "Notes",
       "type": "nested",
       "multiplicity": "many",
       "fields": [
         {
           "name": "date",
-          "label": "i18n/contacts.date.label",
+          "label": "Date",
           "type": "dateTime",
           "defaultValue": "expressions/currentDate",
           "uiOptions": {
@@ -79,7 +79,7 @@
         },
         {
           "name": "user",
-          "label": "i18n/contacts.user.label",
+          "label": "User",
           "type": "relationship",
           "targetEntity": "sys.users",
           "defaultValue": "js/notesUserFieldDefaultValue",
@@ -89,7 +89,7 @@
         },
         {
           "name": "note",
-          "label": "i18n/contacts.note.label",
+          "label": "Note",
           "type": "text",
           "required": true,
           "uiOptions": {
@@ -102,12 +102,12 @@
   ],
   "actions": {
     "name": "addNote",
-    "label": "i18n/contacts.addNote.label",
+    "label": "Add note",
     "type": "oneRecord",
     "parameters": [
       {
         "name": "note",
-        "label": "i18n/contacts.note.label",
+        "label": "Note",
         "type": "text",
         "required": true,
         "uiOptions": {

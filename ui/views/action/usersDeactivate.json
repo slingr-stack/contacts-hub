@@ -1,6 +1,6 @@
 {
   "name": "usersDeactivate",
-  "label": "i18n/users.deactivate.label",
+  "label": "Deactivate",
   "entity": "sys.users",
   "action": "deactivate"
 }

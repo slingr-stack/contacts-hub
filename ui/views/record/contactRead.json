@@ -1,6 +1,6 @@
 {
   "name": "contactRead",
-  "label": "i18n/contacts.read.label",
+  "label": "Contact detail",
   "entity": "contacts",
   "type": "read"
 }

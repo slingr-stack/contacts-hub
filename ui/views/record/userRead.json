@@ -1,6 +1,6 @@
 {
   "name": "userRead",
-  "label": "i18n/users.userRead.label",
+  "label": "User detail",
   "entity": "sys.users",
   "type": "read"
 }

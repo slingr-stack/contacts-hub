@@ -1,6 +1,6 @@
 {
   "name": "users",
-  "label": "i18n/views.users.label",
+  "label": "Users",
   "entity": "sys.users",
   "settings": {
     "sortField": "fullName",
@@ -17,53 +17,46 @@
       "field": "groups.group",
       "options": {
          "overrideLabel": true,
-          "label": "i18n/views.users.columns.groups.group.label"
+          "label": "Groups"
       }
     },
     {
       "field": "identityProviders.name",
       "options": {
         "overrideLabel": true,
-        "label": "i18n/views.users.columns.identityProviders.name.label"
-      }
-    },
-    {
-      "field": "identityProviders.name",
-      "options": {
-        "overrideLabel": true,
-        "label": "i18n/views.users.columns.identityProviders.name.label"
+        "label": "Identity providers"
       }
     },
     {
       "name": "lastLogin",
-      "label": "i18n/views.users.columns.lastLogin.label",
+      "label": "Last login",
       "type": "dateTime",
       "calculation": "js/lastLoginColumnCalculation"
     },
     {
       "name": "fromIp",
-      "label": "i18n/views.users.columns.fromIp.label",
+      "label": "From IP",
       "type": "text",
       "calculation": "js/fromIpColumnCalculation"
     },
     {
       "name": "connectionStatus",
-      "label": "i18n/views.users.columns.connectionStatus.label",
+      "label": "Connection",
       "type": "choice",
       "choices": [
         {
           "name": "online",
-          "label": "i18n/views.users.columns.connectionStatus.online.label",
+          "label": "Online",
           "color": "success"
         },
         {
           "name": "away",
-          "label": "i18n/views.users.columns.connectionStatus.away.label",
+          "label": "Away",
           "color": "warning"
         },
         {
           "name": "offline",
-          "label": "i18n/views.users.columns.connectionStatus.offline.label"
+          "label": "Offline"
         }
       ],
       "calculation": "js/connectionStatusColumnCalculation"

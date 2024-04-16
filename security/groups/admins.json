@@ -52,80 +52,43 @@
       "fields": [
         {
           "field": "company",
-          "label": "i18n/contacts.company.label",
-          "type": "relationship",
-          "required": true,
-          "targetEntity": "companies",
-          "filter": {
-            "status": "active"
-          }
+          "permission": "readWrite"
         },
         {
           "field": "firstName",
-          "label": "i18n/contacts.firstName.label",
-          "type": "text",
-          "required": true
+          "permission": "readWrite"
         },
         {
           "field": "lastName",
-          "label": "i18n/contacts.lastName.label",
-          "type": "text",
-          "required": true
+          "permission": "readWrite"
         },
         {
           "field": "fullName",
-          "label": "i18n/contacts.fullName.label",
-          "type": "text",
-          "calculation": "js/fullNameFieldCalculation"
+          "permission": "readWrite"
         },
         {
           "field": "email",
-          "label": "i18n/contacts.email.label",
-          "type": "email",
-          "required": true,
-          "indexable": true,
-          "unique": true
+          "permission": "readWrite"
         },
         {
           "field": "phoneNumbers",
-          "label": "i18n/contacts.phoneNumbers.label",
-          "type": "phone",
-          "multiplicity": "many"
+          "permission": "readWrite"
         },
         {
           "field": "notes",
-          "label": "i18n/contacts.notes.label",
-          "type": "nested",
-          "multiplicity": "many",
-          "fields": [
+          "permission": "readWrite",
+          "nestedFields": [
             {
               "field": "date",
-              "label": "i18n/contacts.date.label",
-              "type": "dateTime",
-              "defaultValue": "expressions/currentDate",
-              "uiOptions": {
-                "readOnly": "always"
-              }
+              "permission": "readWrite"
             },
             {
               "name": "user",
-              "label": "i18n/contacts.user.label",
-              "type": "relationship",
-              "targetEntity": "sys.users",
-              "defaultValue": "js/userFieldDefaultValue",
-              "uiOptions": {
-                "readOnly": "always"
-              }
+              "permission": "readWrite"
             },
             {
               "name": "note",
-              "label": "i18n/contacts.note.label",
-              "type": "text",
-              "required": true,
-              "uiOptions": {
-                "editComponent": "textArea",
-                "numberOfRows": 4
-              }
+              "permission": "readWrite"
             }
           ]
         }

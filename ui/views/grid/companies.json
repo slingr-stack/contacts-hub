@@ -1,6 +1,6 @@
 {
   "name": "companies",
-  "label": "i18n/companies.label",
+  "label": "Companies",
   "entity": "companies",
   "settings": {
     "sortField": "name",
@@ -18,7 +18,7 @@
     },
     {
       "name": "contacts",
-      "label": "i18n/views.companies.contacts.label",
+      "label": "Contacts",
       "type": "integer",
       "calculation": "js/contactsColumnCalculation"
     }

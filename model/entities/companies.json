@@ -1,6 +1,6 @@
 {
   "name": "companies",
-  "label": "i18n/companies.label",
+  "label": "Companies",
   "recordLabel": "fields/name",
   "settings": {
     "auditLogs": {
@@ -22,7 +22,7 @@
   "fields": [
     {
       "name": "name",
-      "label": "i18n/companies.name.label",
+      "label": "Name",
       "type": "text",
       "required": true,
       "indexable": true,
@@ -30,7 +30,7 @@
     },
     {
       "name": "description",
-      "label": "i18n/companies.description.label",
+      "label": "Description",
       "type": "text",
       "uiOptions": {
         "editComponent": "textArea",
@@ -39,16 +39,16 @@
     },
     {
       "name": "status",
-      "label": "i18n/companies.status.label",
+      "label": "Status",
       "type": "choice",
       "choices": [
         {
           "name": "active",
-          "label": "i18n/companies.active.label"
+          "label": "Active"
         },
         {
           "name": "inactive",
-          "label": "i18n/companies.inactive.label"
+          "label": "Inactive"
         }
       ],
       "defaultValue": "active",
@@ -58,17 +58,17 @@
     },
     {
       "name": "address",
-      "label": "i18n/companies.address.label",
+      "label": "Address",
       "type": "nested",
       "fields": [
         {
           "name": "street",
-          "label": "i18n/companies.street.label",
+          "label": "Street",
           "type": "text"
         },
         {
           "name": "zipCode",
-          "label": "i18n/companies.zipCode.label",
+          "label": "Zip code",
           "type": "integer"
         }
       ]
@@ -77,7 +77,7 @@
   "actions": [
     {
       "name": "activate",
-      "label": "i18n/companies.activate.label",
+      "label": "Activate",
       "type": "oneRecord",
       "precondition": {
         "status": "inactive"
@@ -86,7 +86,7 @@
     },
     {
       "name": "deactivate",
-      "label": "i18n/companies.deactivate.label",
+      "label": "Deactivate",
       "type": "oneRecord",
       "precondition": {
         "status": "active"
