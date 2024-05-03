@@ -1,6 +1,6 @@
 {
-  "name": "userUpdate",
-  "label": "Update user",
+  "name": "systemUsersAdd",
+  "label": "Users Add",
   "entity": "sys.users",
   "type": "edit"
 }
