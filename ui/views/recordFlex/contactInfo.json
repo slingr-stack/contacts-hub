@@ -117,6 +117,35 @@
                 ],
                 "showLabel": false
               }
+            },
+            {
+              "type": "table",
+              "name": "notes",
+              "label": "Notes",
+              "columnsSchema": "static",
+              "columns": [
+                {
+                  "name": "Date",
+                  "label": "date",
+                  "type": "dateTime",
+                  "options": {
+                    "sortable": true
+                  }
+                },
+                {
+                  "name": "Notes",
+                  "label": "notes",
+                  "type": "text"
+                },
+                {
+                  "name": "User",
+                  "label": "user",
+                  "type": "text"
+                }
+              ],
+              "options": {
+                "showLabel": false
+              }
             }
           ]
         }
