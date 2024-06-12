@@ -1,5 +1,4 @@
 {
-  "name": "stringUtils",
-  "label": "String utilities",
-  "description": "The string utils libraries provides methods for common operations on strings"
+  "name": "commons.stringUtils",
+  "description": ""
 }

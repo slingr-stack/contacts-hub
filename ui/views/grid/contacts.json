@@ -20,22 +20,24 @@
       "field": "phoneNumbers"
     }
   ],
-  "crud": {
-    "create": {
-      "enabled": true,
-      "view": "views/contactCreate"
-    },
-    "read": {
-      "enabled": true,
-      "view": "views/contactRead",
-      "openInModal": true
-    },
-    "update": {
-      "enabled": true,
-      "view": "views/contactUpdate"
-    },
-    "delete": {
-      "enabled": true
+  "crudActions": [
+    {
+      "create": {
+        "enabled": true,
+        "view": "views/contactCreate"
+      },
+      "read": {
+        "openInModal": true,
+        "enabled": true,
+        "view": "views/contactInfo"
+      },
+      "edit": {
+        "enabled": true,
+        "view": "views/contactUpdate"
+      },
+      "delete": {
+        "enabled": true
+      }
     }
-  }
+  ]
 }

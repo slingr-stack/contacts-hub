@@ -1,6 +1,0 @@
-{
-  "name": "usersActivate",
-  "label": "Activate",
-  "entity": "sys.users",
-  "action": "activate"
-}

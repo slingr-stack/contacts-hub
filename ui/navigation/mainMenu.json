@@ -1,29 +1,22 @@
 {
   "entries": [
     {
+      "type": "viewEntry",
       "label": "Companies",
-      "type": "view",
-      "view": "views/grid/companies",
-      "icon": "city-alt"
+      "name": "companies",
+      "view": "companies",
+      "options": {
+        "icon": "zmdi-city-alt"
+      }
     },
     {
+      "type": "viewEntry",
       "label": "Contacts",
-      "type": "view",
-      "view": "views/grid/contacts",
-      "icon": "accounts"
-    },
-    {
-      "label": "Administration",
-      "type": "group",
-      "expanded": true,
-      "entries": [
-        {
-          "label": "Users",
-          "type": "view",
-          "view": "views/grid/users",
-          "icon": "assigment-account"
-        }
-      ]
+      "name": "contacts",
+      "view": "contacts",
+      "options": {
+        "icon": "zmdi-accounts"
+      }
     }
   ]
 }

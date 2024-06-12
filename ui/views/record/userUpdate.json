@@ -1,6 +1,0 @@
-{
-  "name": "systemUsersEdit",
-  "label": "Users Edit",
-  "entity": "sys.users",
-  "type": "update"
-}

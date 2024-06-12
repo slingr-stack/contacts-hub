@@ -2,5 +2,5 @@
   "name": "contactRead",
   "label": "Contact detail",
   "entity": "contacts",
-  "type": "read"
+  "type": "readOnly"
 }

@@ -1,6 +1,0 @@
-{
-  "name": "systemUsersReadOnly",
-  "label": "Users Read Only",
-  "entity": "sys.users",
-  "type": "read"
-}

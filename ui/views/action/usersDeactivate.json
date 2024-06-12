@@ -1,6 +1,0 @@
-{
-  "name": "usersDeactivate",
-  "label": "Deactivate",
-  "entity": "sys.users",
-  "action": "deactivate"
-}

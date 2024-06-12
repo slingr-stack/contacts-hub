@@ -2,5 +2,5 @@
   "name": "companyRead",
   "label": "Company detail",
   "entity": "companies",
-  "type": "read"
+  "type": "readOnly"
 }

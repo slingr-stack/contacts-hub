@@ -2,41 +2,33 @@
   "name": "companies",
   "label": "Companies",
   "entity": "companies",
-  "settings": {
-    "sortField": "name",
-    "sortDirection": "ascendant"
-  },
   "columns": [
     {
       "field": "name"
     },
     {
-      "field": "status",
-      "options": {
-          "alignment": "center"
-      }
+      "field": "status"
     },
     {
-      "name": "contacts",
-      "label": "Contacts",
       "type": "integer",
-      "calculation": "js/contactsColumnCalculation"
+      "name": "view_contacts",
+      "label": "contacts",
+      "calculation": "js/contactsCalculation"
     }
   ],
-  "crud": [
-      {
+  "crudActions": [
+    {
       "create": {
         "enabled": true,
         "view": "views/companyCreate"
       },
       "read": {
         "enabled": true,
-        "view": "views/companyRead",
-        "openInModal": true
+        "view": "views/companyRead"
       },
-      "update": {
+      "edit": {
         "enabled": true,
-        "view": "views/companyUpdate"
+        "view": "views/companiesUpdate"
       },
       "delete": {
         "enabled": true

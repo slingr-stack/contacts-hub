@@ -1,88 +1,84 @@
 {
   "name": "contacts",
   "label": "Contacts",
-  "recordLabel": "js/recordLabel",
-  "settings": {
-    "auditLogs": {
-      "enabled": true,
-      "userContext": {
-        "recordCreated": true,
-        "recordUpdated": true,
-        "recordDeleted": true,
-        "actionExecuted": true
-      },
-      "scriptContext": {
-        "recordCreated": true,
-        "recordUpdated": true,
-        "recordDeleted": true,
-        "actionExecuted": true
-      }
-    }
-  },
+  "fullName": "contacts",
   "fields": [
     {
       "name": "company",
       "label": "Company",
       "type": "relationship",
-      "required": true,
-      "targetEntity": "companies",
-      "filter": {
-        "status": "active"
+      "required": "always",
+      "typeRules": {
+        "entity": "companies",
+        "filteringRules": {
+          "filters": {
+            "status": "active"
+          }
+        }
       }
     },
     {
       "name": "firstName",
       "label": "First name",
       "type": "text",
-      "required": true
+      "syncAccess": false,
+      "required": "always"
     },
     {
       "name": "lastName",
       "label": "Last name",
       "type": "text",
-      "required": true
+      "syncAccess": false,
+      "required": "always"
     },
     {
       "name": "fullName",
       "label": "Full name",
       "type": "text",
-      "calculation": "js/fullNameFieldCalculation"
+      "valueCalculation": "js/fullNameValueCalculation"
     },
     {
       "name": "email",
       "label": "Email",
-      "type": "email",
-      "required": true,
-      "indexable": true,
-      "unique": true
+      "type": "text",
+      "syncAccess": false,
+      "required": "always"
     },
     {
       "name": "phoneNumbers",
       "label": "Phone numbers",
       "type": "phone",
-      "multiplicity": "many"
+      "multiplicity": "many",
+      "syncAccess": false,
+      "typeRules": {
+        "international": false
+      }
     },
     {
       "name": "notes",
       "label": "Notes",
-      "type": "nested",
+      "type": "nestedFields",
       "multiplicity": "many",
-      "fields": [
+      "nestedFields": [
         {
           "name": "date",
           "label": "Date",
           "type": "dateTime",
-          "defaultValue": "expressions/currentDate",
+          "defaultValue": "__current_date__",
+          "required": "always",
           "uiOptions": {
-            "readOnly": "always"
+            "format": "dd-MM-yyyy HH:mm",
+            "pickerFormat": "dd-MM-yyyy HH:mm"
           }
         },
         {
           "name": "user",
           "label": "User",
           "type": "relationship",
-          "targetEntity": "sys.users",
-          "defaultValue": "js/notesUserFieldDefaultValue",
+          "defaultValue": "js/notesUserDefaultValue",
+          "typeRules": {
+            "entity": "sys.users"
+          },
           "uiOptions": {
             "readOnly": "always"
           }
@@ -91,31 +87,34 @@
           "name": "note",
           "label": "Note",
           "type": "text",
-          "required": true,
+          "required": "always",
           "uiOptions": {
-            "editComponent": "textArea",
+            "representation": "textArea",
             "numberOfRows": 4
           }
         }
       ]
     }
   ],
-  "actions": {
-    "name": "addNote",
-    "label": "Add note",
-    "type": "oneRecord",
-    "parameters": [
-      {
-        "name": "note",
-        "label": "Note",
-        "type": "text",
-        "required": true,
-        "uiOptions": {
-          "editComponent": "textArea",
-          "numberOfRows": 4
+  "actions": [
+    {
+      "name": "addNote",
+      "label": "Add note",
+      "parameters": [
+        {
+          "name": "note",
+          "label": "Note",
+          "type": "text",
+          "transient": true,
+          "required": "always",
+          "uiOptions": {
+            "representation": "textArea",
+            "numberOfRows": 4
+          }
         }
-      }
-    ],
-    "actions": "js/addNoteActions"
-  }
+      ],
+      "actions": "js/addNoteActions"
+    }
+  ],
+  "recordLabel": "js/contactsRecordLabel"
 }

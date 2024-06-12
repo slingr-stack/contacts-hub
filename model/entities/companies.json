@@ -1,39 +1,23 @@
 {
   "name": "companies",
   "label": "Companies",
-  "recordLabel": "fields/name",
-  "settings": {
-    "auditLogs": {
-      "enabled": true,
-      "userContext": {
-        "recordCreated": true,
-        "recordUpdated": true,
-        "recordDeleted": true,
-        "actionExecuted": true
-      },
-      "scriptContext": {
-        "recordCreated": true,
-        "recordUpdated": true,
-        "recordDeleted": true,
-        "actionExecuted": true
-      }
-    }
-  },
   "fields": [
     {
       "name": "name",
       "label": "Name",
       "type": "text",
-      "required": true,
+      "unique": true,
       "indexable": true,
-      "unique": true
+      "syncAccess": false,
+      "required": "always"
     },
     {
       "name": "description",
       "label": "Description",
       "type": "text",
+      "syncAccess": false,
       "uiOptions": {
-        "editComponent": "textArea",
+        "representation": "textArea",
         "numberOfRows": 4
       }
     },
@@ -41,35 +25,53 @@
       "name": "status",
       "label": "Status",
       "type": "choice",
-      "choices": [
-        {
-          "name": "active",
-          "label": "Active"
-        },
-        {
-          "name": "inactive",
-          "label": "Inactive"
-        }
-      ],
       "defaultValue": "active",
+      "required": "always",
+      "typeRules": {
+        "possibleValues": [
+          {
+            "name": "active",
+            "label": "Active",
+            "color": "success"
+          },
+          {
+            "name": "inactive",
+            "label": "Inactive",
+            "color": "grey"
+          }
+        ]
+      },
       "uiOptions": {
         "readOnly": "always"
       }
     },
     {
+      "name": "email",
+      "label": "Email",
+      "type": "email"
+    },
+    {
+      "name": "website",
+      "label": "Website",
+      "type": "url"
+    },
+    {
       "name": "address",
       "label": "Address",
-      "type": "nested",
-      "fields": [
+      "type": "nestedFields",
+      "syncAccess": false,
+      "nestedFields": [
         {
           "name": "street",
           "label": "Street",
-          "type": "text"
+          "type": "text",
+          "syncAccess": false
         },
         {
           "name": "zipCode",
           "label": "Zip code",
-          "type": "integer"
+          "type": "integer",
+          "syncAccess": false
         }
       ]
     }
@@ -78,7 +80,6 @@
     {
       "name": "activate",
       "label": "Activate",
-      "type": "oneRecord",
       "precondition": {
         "status": "inactive"
       },
@@ -87,11 +88,11 @@
     {
       "name": "deactivate",
       "label": "Deactivate",
-      "type": "oneRecord",
       "precondition": {
         "status": "active"
       },
       "actions": "js/deactivateActions"
     }
-  ]
+  ],
+  "recordLabel": "fields/name"
 }

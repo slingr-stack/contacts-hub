@@ -2,5 +2,5 @@
   "name": "companyCreate",
   "label": "Create company",
   "entity": "companies",
-  "type": "create"
+  "type": "add"
 }
