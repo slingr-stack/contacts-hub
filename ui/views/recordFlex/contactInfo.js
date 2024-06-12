@@ -20,12 +20,10 @@ function notesTableRowsCalculation(record, options) {
     });
     // retrieve only the requested batch
     let notesBatch = notes.slice(from, to);
-    notesBatch.forEach(function (note) {
-        let userField = note.field('user');
-        let noteField = note.field('note');
+    notesBatch.forEach(function (noteItem) {
         rows.push({
-            user: userField.label(),
-            note: noteField.val()
+            user: noteItem.user,
+            note: noteItem.note
         });
     });
     let columns = [
