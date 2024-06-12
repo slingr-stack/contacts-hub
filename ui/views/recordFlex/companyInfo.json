@@ -99,7 +99,7 @@
               },
               "dataSet": {
                 "entity": "contacts",
-                "filtering": {
+                "filters": {
                     "company": "$currentRecord"
                 }
               },
