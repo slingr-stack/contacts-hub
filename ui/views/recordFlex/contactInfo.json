@@ -110,7 +110,7 @@
                 "type": "infiniteScrolling",
                 "batchSize": 5
               },
-              "rows": "js/notesTableRowsCalculation",
+              "dataSet": "js/notesTableRowsCalculation",
               "options": {
                 "showLabel": false
               }

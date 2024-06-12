@@ -30,7 +30,7 @@
       "type": "dateTime",
       "system": true,
       "syncAccess": false,
-      "defaultValue": "__current_date__",
+      "defaultValue": "$currentDate",
       "required": "always"
     },
     {

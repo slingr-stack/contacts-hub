@@ -64,7 +64,7 @@
           "name": "date",
           "label": "Date",
           "type": "dateTime",
-          "defaultValue": "__current_date__",
+          "defaultValue": "$currentDate",
           "required": "always",
           "uiOptions": {
             "format": "dd-MM-yyyy HH:mm",
