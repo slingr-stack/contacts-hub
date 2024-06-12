@@ -28,12 +28,12 @@ function notesTableRowsCalculation(record, options) {
     });
     let columns = [
         {
-            name: "user",
-            label: "User"
+            name: 'user',
+            label: 'User'
         },
         {
-            name: "note",
-            label: "Note",
+            name: 'note',
+            label: 'Note',
             options: {
                 allowFiltering: true
             }
