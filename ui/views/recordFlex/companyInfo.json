@@ -102,9 +102,6 @@
                 "filters": {
                     "company": "$currentRecord"
                 }
-              },
-              "options": {
-                "showLabel": false
               }
             }
           ]
