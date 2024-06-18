@@ -31,10 +31,11 @@
           "width": 4,
           "widgets": [
             {
-              "type": "header",
-              "name": "spacer",
-              "label": "Spacer",
-              "visible": "never"
+              "type": "table",
+              "name": "personalInfo",
+              "label": "Personal info",
+              "columnsSchema": "dynamic",
+              "dataSet": "js/personalInfoTableRowsCalculation"
             }
           ]
         }
@@ -110,10 +111,7 @@
                 "type": "infiniteScrolling",
                 "batchSize": 5
               },
-              "dataSet": "js/notesTableRowsCalculation",
-              "options": {
-                "showLabel": false
-              }
+              "dataSet": "js/notesTableRowsCalculation"
             }
           ]
         }
