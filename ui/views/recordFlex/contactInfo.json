@@ -102,15 +102,14 @@
           "width": 12,
           "widgets": [
             {
-              "type": "table",
+              "type": "dynamicTable",
               "name": "notes",
               "label": "Notes",
-              "columnsSchema": "dynamic",
               "pagination": {
                 "type": "infiniteScrolling",
                 "batchSize": 5
               },
-              "dataSet": "js/notesTableRowsCalculation"
+              "script": "js/notesTableRowsCalculation"
             }
           ]
         }
