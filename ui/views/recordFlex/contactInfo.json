@@ -31,11 +31,10 @@
           "width": 4,
           "widgets": [
             {
-              "type": "table",
+              "type": "dynamicTable",
               "name": "personalInfo",
               "label": "Personal info",
-              "columnsSchema": "dynamic",
-              "dataSet": "js/personalInfoTableRowsCalculation"
+              "script": "js/personalInfoTableRowsCalculation"
             }
           ]
         }
