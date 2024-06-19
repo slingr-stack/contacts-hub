@@ -34,7 +34,7 @@
               "type": "dynamicTable",
               "name": "personalInfo",
               "label": "Personal info",
-              "script": "js/personalInfoTableRowsCalculation"
+              "script": "js/personalInfoTableWidgetCalculation"
             }
           ]
         }
@@ -109,7 +109,7 @@
                 "type": "infiniteScrolling",
                 "batchSize": 5
               },
-              "script": "js/notesTableRowsCalculation"
+              "script": "js/notesTableWidgetCalculation"
             }
           ]
         }
