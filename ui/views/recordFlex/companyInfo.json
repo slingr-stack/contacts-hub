@@ -72,10 +72,9 @@
           "width": 12,
           "widgets": [
             {
-              "type": "table",
-              "name": "notes",
-              "label": "Notes",
-              "columnsSchema": "static",
+              "type": "dataTable",
+              "name": "contacts",
+              "label": "Contacts",
               "columns": [
                 {
                   "field": "fullName",
@@ -92,7 +91,7 @@
               ],
               "pagination": {
                 "type": "perPage",
-                "itemsPerPage": 20
+                "itemsPerPage": 10
               },
               "header": {
                 "sticky": true
