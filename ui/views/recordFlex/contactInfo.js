@@ -21,23 +21,49 @@ function personalInfoTableWidgetCalculation(record, options) {
     let gender = genderInfo.gender
     let ageInfo = svc.http.get({url: 'https://api.agify.io/?name=' + record.field('fullName').val()});
     let age = ageInfo.age;
-    let rows = [
-        {
-            attribute: 'Nationality',
-            value: nationality
-        },
-        {
-            attribute: 'Gender',
-            value: gender
-        },
-        {
-            attribute: 'Age',
-            value: age
-        }
-    ]
     return {
-        columns: columns,
-        rows: rows
+        header: [
+            {name: "attribute", label: "Attribute", options: {style: {fontWeight: "bold"}}},
+            {name: "value", label: "Value", options: {style: {fontWeight: "bold"}}}
+        ],
+        rows: [
+            {
+                cells: [
+                    {
+                        headerName: 'attribute',
+                        value: "Nationality"
+                    },
+                    {
+                        headerName: 'value',
+                        value: nationality
+                    }
+                ]
+            },
+            {
+                cells: [
+                    {
+                        headerName: 'attribute',
+                        value: "Gender"
+                    },
+                    {
+                        headerName: 'value',
+                        value: gender
+                    }
+                ]
+            },
+            {
+                cells: [
+                    {
+                        headerName: 'attribute',
+                        value: "Age"
+                    },
+                    {
+                        headerName: 'value',
+                        value: age
+                    }
+                ]
+            }
+        ]
     };
 }
 
@@ -48,7 +74,7 @@ function notesTableWidgetCalculation(record, options) {
     let from = options.from || 0;
     let to = options.to || notes.length;
     // apply filtering based on the 'note' column
-    notes = notes.filter(function(noteItem) {
+    notes = notes.filter(function (noteItem) {
         let noteValue = noteItem.note
         if (filters.note && noteValue.toLowerCase().includes(filters.note.toLowerCase())) {
             return true;
@@ -59,25 +85,17 @@ function notesTableWidgetCalculation(record, options) {
     let notesBatch = notes.slice(from, to);
     notesBatch.forEach(function (noteItem) {
         rows.push({
-            user: noteItem.user,
-            note: noteItem.note
+            cells: [
+                {headerName: "user", value: noteItem.user},
+                {headerName: "note", value: noteItem.note}
+            ]
         });
     });
-    let columns = [
-        {
-            name: 'user',
-            label: 'User'
-        },
-        {
-            name: 'note',
-            label: 'Note',
-            options: {
-                allowFiltering: true
-            }
-        }
-    ];
     return {
-        columns: columns,
-        rows: rows
+        header: [
+            {name: "user", label: "User", options: {style: {fontWeight: "bold"}}},
+            {name: "note", label: "Note", options: {style: {fontWeight: "bold"}}}
+        ],
+        body: rows
     };
 }
